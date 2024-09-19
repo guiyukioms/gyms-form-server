@@ -27,7 +27,7 @@ const contactEmail = nodemailer.createTransport({
 // Verifica a configuração do transporte de e-mail
 contactEmail.verify((error) => {
     if (error) {
-        console.log(error); // Exibe erros na configuração
+        console.log('error'); // Exibe erros na configuração
     } else {
         console.log("Ready to Send"); // Confirma que a configuração está pronta
     }
@@ -37,6 +37,11 @@ contactEmail.verify((error) => {
 router.get("/", (req, res) => {
   res.send("Server is running!");
 });
+
+// Rota GET para verificar o status do servidor 
+router.get("/status", (req, res) => {
+    res.status(200).send("Server is working!"); // Responde que o servidor está ativo
+  });
 
 // Define uma rota POST para o formulário de contato
 router.post("/contact", (req, res) => {
