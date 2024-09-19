@@ -62,7 +62,7 @@ router.post("/contact", (req, res) => {
 // Define a porta dinamicamente, com fallback para a porta 5000
 const port = process.env.PORT || 5000;
 
-// Inicia o servidor na porta PORT
+// Inicia o servidor na porta port
 app.listen(port, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${port}`);
 });
