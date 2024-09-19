@@ -33,6 +33,11 @@ contactEmail.verify((error) => {
     }
 });
 
+// Rota GET para a raiz
+router.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
 // Define uma rota POST para o formulário de contato
 router.post("/contact", (req, res) => {
     const name = req.body.firstName + ' ' + req.body.lastName;
